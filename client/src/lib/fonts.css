@@ -1,0 +1,4 @@
+/* Custom fonts for the fantasy theme */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Font classes are defined in tailwind.config.ts */

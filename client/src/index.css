@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+
+  /* Fantasy theme colors */
+  --purple-primary: 285 55% 30%;
+  --blue-magical: 210 76% 53%;
+  --gold-mystical: 36 95% 56%;
+  --charcoal-dark: 240 21% 15%;
+  --parchment: 39 58% 93%;
+  --forest-green: 142 35% 28%;
+  
+  /* Chart colors */
+  --chart-1: var(--blue-magical);
+  --chart-2: var(--purple-primary);
+  --chart-3: var(--gold-mystical);
+  --chart-4: var(--forest-green);
+  --chart-5: 0 84.2% 60.2%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-charcoal-dark text-parchment font-ui antialiased;
+  }
+}
+
+@layer components {
+  .scroll {
+    @apply bg-gradient-to-r from-parchment to-parchment/90 text-charcoal-dark shadow-lg relative rounded-lg p-8;
+  }
+  
+  .scroll:before, .scroll:after {
+    @apply content-[''] absolute h-8 w-full bg-gradient-to-r from-[#C9B28F] to-[#E5D6BC] rounded;
+  }
+  
+  .scroll:before {
+    @apply -top-4;
+  }
+  
+  .scroll:after {
+    @apply -bottom-4;
+  }
+  
+  .magic-btn {
+    @apply relative overflow-hidden;
+  }
+  
+  .magic-btn:after {
+    @apply content-[''] absolute -top-1/2 -left-1/2 w-[200%] h-[200%] bg-radial-gradient transform scale-0 transition-transform duration-500;
+  }
+  
+  .magic-btn:hover:after {
+    @apply scale-100;
+  }
+}
+
+@layer utilities {
+  .bg-radial-gradient {
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-mystical to-blue-magical;
+  }
+}
